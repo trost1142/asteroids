@@ -1,3 +1,4 @@
+from time import sleep
 from constants import *
 import pygame
 import player
@@ -29,6 +30,10 @@ def main():
     screen.fill(000)
     for updatable_player in updatable:
       updatable_player.update(dt)
+    for asteroid_objs in asteroids:
+      if asteroid_objs.does_collide(player1):
+        print("Game Over!")
+        exit()
     for drawable_player in drawable:
       drawable_player.draw(screen)
     pygame.display.flip()
