@@ -40,7 +40,7 @@ def main():
     for asteroid_obj in asteroids:
       for bullet in shots:
         if asteroid_obj.does_collide(bullet):
-          asteroid_obj.kill()
+          asteroid_obj.split()
           bullet.kill()
     for drawable_player in drawable:
       drawable_player.draw(screen)
